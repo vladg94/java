@@ -1,4 +1,4 @@
-/*
+/**
 *Prints smth in romanian
 *@author Vlad Georgescu 
 */
