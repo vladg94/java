@@ -13,8 +13,8 @@ public class MaxTwoDoubles
 
         if (firtsDouble > secondDouble) {
             System.out.println("first one is bigger than the second one");
-        
-        else
+        }
+        else {
             System.out.println("second one is bigger than the first one");
         }
     }
