@@ -1,13 +1,14 @@
 /**
 * Prints out the degree earned by the student, uses if else statements.
 * Tested for 32, 40, 51, 69, 70. Expected results given.
+* Exception given for x
 * @author Vlad Georgescu 
 */
 public class DegreeCategory
 {
     public static void main(String[] args)
     {
-        double studentGrade = Double.parseDouble (args[0]);
+        double studentGrade = Double.parseDouble(args[0]);
 
         if (studentGrade < 32) {
             System.out.println("Fail!");

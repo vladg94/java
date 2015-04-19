@@ -1,6 +1,7 @@
 /**
 * Uses an if else and an if statement to print one of three cases.
 * Tested for 32, 50, 70. Expected results given.
+* Exception given for xyz
 * @author Vlad Georgescu
 */
 public class PassFailDistinction
