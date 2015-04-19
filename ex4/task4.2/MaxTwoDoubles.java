@@ -1,5 +1,5 @@
 /**
-*Prints the max between two doubles
+* Prints the max between two doubles
 * Tested for 7.4 7.3 and 2 6.3, expected results given
 * @author Vlad Georgescu 
 */
@@ -13,8 +13,7 @@ public class MaxTwoDoubles
 
         if (firtsDouble > secondDouble) {
             System.out.println("first one is bigger than the second one");
-        }
-        else {
+        } else {
             System.out.println("second one is bigger than the first one");
         }
     }
