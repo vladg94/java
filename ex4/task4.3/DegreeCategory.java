@@ -1,6 +1,6 @@
 /**
 * Prints out the degree earned by the student, uses if else statements.
-* Tested for 32, 40, 51, 69, 70. Expected results given.
+* Tested for 28, 32, 41, 51, 69, 70. Expected results given.
 * Exception given for x
 * @author Vlad Georgescu 
 */
@@ -13,15 +13,15 @@ public class DegreeCategory
         if (studentGrade < 32) {
             System.out.println("Fail!");
         } else if (studentGrade < 40) {
-                System.out.println("Pass/ordinary degree!");
+            System.out.println("Pass/ordinary degree!");
         } else if (studentGrade < 50) {
-                System.out.println("Honours, third class!");
+            System.out.println("Honours, third class!");
         } else if (studentGrade < 60) {
-                System.out.println("Honours, second class, divion two!");
+            System.out.println("Honours, second class, divion two!");
         } else if (studentGrade < 70) {
-                System.out.println("Honours, second class, division one!");
+            System.out.println("Honours, second class, division one!");
         } else {
-                System.out.println("Honours, firts class");
+            System.out.println("Honours, firts class");
         } 
     }
 }

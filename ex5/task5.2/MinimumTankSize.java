@@ -1,7 +1,7 @@
 /**
 * Stupid manufacturer needs a program to tell him 
 * how big a tank must be, to hold 30 cube meters of oil
-* Tested for
+* Tested for 3 and john
 * @author Vlad Georgescu
 */
 public class MinimumTankSize
@@ -14,7 +14,9 @@ public class MinimumTankSize
 
         while (tankSize < requieredVolume) {
             sideLenght = sideLenght + 0.5;
+            tankSize = sideLenght * sideLenght * sideLenght;
         }
+        
         System.out.println("Ca sa incapa pula mea este nevoie de: " + tankSize);    
     }
 }

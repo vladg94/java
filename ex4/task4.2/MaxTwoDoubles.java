@@ -4,7 +4,6 @@
 * Exception given for mini 12 
 * @author Vlad Georgescu 
 */
-
 public class MaxTwoDoubles
 {
     public static void main(String[] args)

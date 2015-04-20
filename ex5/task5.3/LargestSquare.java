@@ -1,6 +1,6 @@
 /**
 * Prints the largest square number less than or equal to the given number
-* Tested for
+* Tested for 99, irinel
 * @author Vlad Georgescu
 */
 public class LargestSquare
@@ -13,7 +13,10 @@ public class LargestSquare
         while (Math.pow(squareRoot, 2) < myNumber) {
             squareRoot = squareRoot + 1;
         }
+        
+        squareRoot = squareRoot - 1;
+        
         System.out.println("The largest square number is: " 
-            + squareRoot);
+            + Math.pow(squareRoot, 2));
     }
 }
