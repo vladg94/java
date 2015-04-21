@@ -18,7 +18,7 @@ public class SinTable
 
         for (double firstValue = Double.parseDouble(args[0]); firstValue <= 90; 
             firstValue = firstValue + increment) {
-            System.out.println("sin(" + args[0] + ")" + " = "
+            System.out.println("sin(" + firstValue + ")" + " = "
                 + Math.sin(Math.toRadians(firstValue)));
             
         }
