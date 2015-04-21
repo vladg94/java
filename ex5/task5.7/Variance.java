@@ -15,14 +15,14 @@ public class Variance
         }
 
         double mean = sumSoFar / (double) args.length;
-		
-		for (int index = 0; index < args.length; index = index + 1) {
-			double deviation = Integer.parseInt(args[index]) - mean;
-			double deviationSquare = Math.pow(deviation, 2);
-			sumOfDeviations = sumOfDeviations + deviationSquare;
-			}
-		
-		System.out.println("The mean average is " + mean);
-		System.out.println("The variance is " + sumOfDeviations /(double) args.length);
+        
+        for (int index = 0; index < args.length; index = index + 1) {
+            double deviation = Integer.parseInt(args[index]) - mean;
+            double deviationSquare = Math.pow(deviation, 2);
+            sumOfDeviations = sumOfDeviations + deviationSquare;
+            }
+        
+        System.out.println("The mean average is " + mean);
+        System.out.println("The variance is " + sumOfDeviations /(double) args.length);
     }
 }
