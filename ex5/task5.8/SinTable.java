@@ -16,11 +16,11 @@ public class SinTable
             + " in steps of " + increment);
         System.out.println("----------------------------------------------");
 
-        for ( int currentValue = firstValue; currentValue <= 90; 
-            currentValue = currentValue + increment) {
+        for (int currentValue = firstValue; currentValue <= endingPoint; 
+            currentValue = currentValue + increment) 
+        {
             System.out.println("sin(" + currentValue + ")" + " = "
                 + Math.sin(Math.toRadians(currentValue)));
-            
         }
         System.out.println("----------------------------------------------");
     }
