@@ -1,6 +1,6 @@
 /**
 * Prints a sin table 
-* Tested for 
+* Tested for (0 10 90) (4 5 muieGhitescu)
 * @author Vlad Georgescu 
 */
 public class SinTable 
