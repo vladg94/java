@@ -1,4 +1,4 @@
-?**
+/**
 * Prints the variance of a grup of numbers
 * Tested for (2 4 6 8 10), (2 i 4 5 6)
 * @author Vlad Georgescu 
@@ -20,8 +20,8 @@ public class Variance
 			double deviation = Integer.parseInt(args[index]) - mean;
 			double deviationSquare = Math.pow(deviation, 2);
 			sumOfDeviations = sumOfDeviations + deviationSquare;
-		}
-
+			}
+		
 		System.out.println("The mean average is " + mean);
 		System.out.println("The variance is " + sumOfDeviations /(double) args.length);
     }
