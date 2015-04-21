@@ -10,11 +10,11 @@ public class Variance
         int sumSoFar = Integer.parseInt(args[0]);
         double sumOfDeviations = 0;
         
-        for (int index = 1; index < args.length; index = index + 1){
+        for (int index = 1; index < args.length; index = index + 1) {
             sumSoFar = sumSoFar + Integer.parseInt(args[index]);
         }
 
-        double mean = sumSoFar / (double) args.length;
+        double mean = sumSoFar / (double)args.length;
         
         for (int index = 0; index < args.length; index = index + 1) {
             double deviation = Integer.parseInt(args[index]) - mean;
@@ -23,6 +23,6 @@ public class Variance
             }
         
         System.out.println("The mean average is " + mean);
-        System.out.println("The variance is " + sumOfDeviations /(double) args.length);
+        System.out.println("The variance is " + sumOfDeviations / (double)args.length);
     }
 }
