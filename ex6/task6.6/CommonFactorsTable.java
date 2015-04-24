@@ -35,7 +35,6 @@ public class CommonFactorsTable
 
         //Last line of the heading
         //Left side 
-
         System.out.print("|-----|");
 
         //Right side
@@ -46,8 +45,8 @@ public class CommonFactorsTable
         System.out.println("-|");
 
         //Now the rows, and also the calculus for GCD
-
         for (int row = 2; row <= 20; row++) {
+            
             int subsRow = row;
         
             if (subsRow < 10) {            
@@ -55,10 +54,12 @@ public class CommonFactorsTable
             } else {
                 System.out.print("|  " + subsRow + " |");
             }
+            
             for (int column = 2; column <= 20; column++) {
                 
                 int subsColumn = column;    
-                
+                subsRow = row;
+
                 while (subsRow != subsColumn) { 
                     if (subsRow < subsColumn) {
                         subsColumn -= subsRow;
@@ -68,12 +69,25 @@ public class CommonFactorsTable
                 }
 
                 if (subsRow != 1) {
-                    System.out.print("--#");
+                    System.out.print("---#");
                 } else {
-                    System.out.print("--|");
+                    System.out.print("---|");
                 }
             }
+            
             System.out.println(" |");        
         }   
+        
+        // Finishing the table
+        // Left part
+        System.out.print("|-----|");
+
+        //Right part
+        for (int column = 2; column <= 20; column++) {
+            System.out.print("----");
+        }
+
+        System.out.println(" |");
     }   
 }
+
