@@ -8,17 +8,13 @@ public class MaxList
     public static void main(String[] args)
     {
         double maxSoFar = Double.parseDouble(args[0]);
-        int n = 1;
-
-        for (double index = 0; index < args.length; index++) {
-            if (maxSoFar < args[index]) {
-                maxSoFar = args[index];
-            } else if (maxSoFar == args[index]) {
-                maxSoFar = args[index - n];
-            }
-            n++;
+       
+        for (int index = 0; index < args.length; index++) {
+            double currentValue = Double.parseDouble(args[index]);         
+            if (maxSoFar < currentValue) {
+                maxSoFar = currentValue;
+            } 
         }
-
         System.out.println("The biggest number is " + maxSoFar);
     }
 }

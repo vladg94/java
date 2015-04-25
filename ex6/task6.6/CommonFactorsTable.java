@@ -47,18 +47,16 @@ public class CommonFactorsTable
         //Now the rows, and also the calculus for GCD
         for (int row = 2; row <= 20; row++) {
             
-            int subsRow = row;
-        
-            if (subsRow < 10) {            
-                System.out.print("|   " + subsRow + " |");
+            if (row < 10) {            
+                System.out.print("|   " + row + " |");
             } else {
-                System.out.print("|  " + subsRow + " |");
+                System.out.print("|  " + row + " |");
             }
             
             for (int column = 2; column <= 20; column++) {
                 
                 int subsColumn = column;    
-                subsRow = row;
+                int subsRow = row;
 
                 while (subsRow != subsColumn) { 
                     if (subsRow < subsColumn) {

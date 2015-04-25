@@ -1,6 +1,6 @@
 /**
 * Prints some useless shit 
-* Tested for 
+* Tested for 1994 2015, muie cacat
 * @author Vlad Georgescu
 */
 public class WorkFuture
