@@ -1,6 +1,6 @@
 /*
 * Prints a rectangle with a hole in the center
-* tested for 
+* tested for 5 5, 3.2 4
 * @author Vlad Georgescu 
 */
 public class PrintHoledRectangle
