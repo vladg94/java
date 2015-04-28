@@ -1,4 +1,4 @@
-/*
+/**
 * Prints the four numbers in the range 100 to 999
 * that the sum of their digits cubes equals the num itself
 * @author Georgescu Vlad
@@ -6,30 +6,28 @@
 public class SumOfCubedDigits
 {
     public static void main(String[] args)
-    {
-        for (int num = 100; num <= 999; num++) {
-            int compNum = num;
-            
-            int last = compNum % 10;
-            double powLast = Math.pow(last, 3);
+    {   
+        System.out.println("The four magical numbers are: ");
 
-            compNum = compNum / 10;
+        for(int hunds = 1; hunds <= 9; hunds++) {
+            double hundsCube = Math.pow(hunds, 3);
 
-            int second = compNum % 10;
-            double powSecond = Math.pow(second, 3);
+            for (int tens = 0; tens <= 9; tens++) {
+                double tensCube = Math.pow(tens, 3);
 
-            int first = compNum / 10;
-            double powFirst = Math.pow(first, 3);
+                for (int units = 0; units <= 9; units++) {
+                    double unitsCube = Math.pow(units, 3);
 
-            double sumOfCubes = powFirst + powSecond + powLast;
+                    int number = hunds * 100 + tens * 10 + units;
+                    double sumOfCubes = hundsCube + tensCube + unitsCube;
 
-            if (sumOfCubes == num) {
-                System.out.println(num);
-            }
-        }     
-    }        
+                    if (number == sumOfCubes) {
+                        System.out.println(number);
+                    }
+                }
+            } 
+        }
+    }    
 }
-
-
 
     

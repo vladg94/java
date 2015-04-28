@@ -58,6 +58,7 @@ public class CommonFactorsTable
                 int subsColumn = column;    
                 int subsRow = row;
 
+               
                 while (subsRow != subsColumn) { 
                     if (subsRow < subsColumn) {
                         subsColumn -= subsRow;
