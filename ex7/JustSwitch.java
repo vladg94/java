@@ -12,7 +12,7 @@ public class JustSwitch
 
         switch(a) {
             //Print holed rectangle
-            case 1 :
+            case 1: {
                 b = (b / 2 ) * 2 + 1;
                 c = (c / 2) * 2 + 1;
 
@@ -35,17 +35,13 @@ public class JustSwitch
                     }
                     System.out.println();
                 }
+                
                 break;
+            }
+            
             //Print triangle legs or triangle(b = c)
-            case 2 : 
-                //Printing the hypotenuse of the rectangle
-                double cathetus1 = Math.pow(b, 2);
-                double cathetus2 = Math.pow(c, 2);
-                double hypotenuse = Math.sqrt(cathetus1 + cathetus2);
-
-                System.out.println("Hypotenuse is " + hypotenuse);
-
-                if ( b == c) { 
+            case 2: {
+                if (b == c) { 
                     //Printing a triangle
                     for(int row = 1; row <= b; row++) {
                         
@@ -54,7 +50,6 @@ public class JustSwitch
                         }
                         
                         System.out.println();
-
                     }
                 } else {
                     //Prints only the legs of the triangle
@@ -65,37 +60,43 @@ public class JustSwitch
                         System.out.print("[_]");
                     }
                 }
-                break;
+            }
+            
             //Print Hypotenuse
-            case 3 :
-                cathetus1 = Math.pow(b, 2);
-                cathetus2 = Math.pow(c, 2);
-                hypotenuse = Math.sqrt(cathetus1 + cathetus2);
+            case 3: {
+                double cathetus1 = Math.pow(b, 2);
+                double cathetus2 = Math.pow(c, 2);
+                double hypotenuse = Math.sqrt(cathetus1 + cathetus2);
 
                 System.out.println("Hypotenuse is " + hypotenuse);
 
                 break; 
+            }
             
             //Print b lines with value of c
-            case 4 :
-                index = 1;
+            case 4 : {
+                int index = 1;
                 do {
                     index++;
                     System.out.println(c);
                 } while (index <= b);
                 break;
+            } 
 
-            default :
+            default : {
                 //Algorithm for GCD
                 while(b != c) {
                     if (b < c) {
                         c -= b;
                     } else {
-                    b -= c;
+                    	b -= c;
                     }
                 }
+                
                 System.out.println("The GCD is " + b);
+                
                 break;
+            }    
         }
     }
 }

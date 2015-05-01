@@ -40,7 +40,6 @@ public class WorkFuture2
 
             currentAge2++;
             presentYear2++;
-
         }
 
         System.out.println("The second person will retire " + presentYear2);
