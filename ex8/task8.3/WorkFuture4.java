@@ -1,6 +1,6 @@
 /**
 * Work future using separate methods
-*
+* Tested for 2015 1994 1998 1996 2000 and 20.3 1950 1970 1980 2000
 * @author Vlad Georgescu
 */
 public class WorkFuture4
