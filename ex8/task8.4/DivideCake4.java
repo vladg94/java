@@ -1,6 +1,6 @@
 /**
 * Old DivideCake only with a separate method
-* Tested for 
+* Tested for 10 20 30 40, 10.1 20 30 40
 * @author Vlad Georgescu 
 */
 public class DivideCake4
