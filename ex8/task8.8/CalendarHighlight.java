@@ -46,7 +46,7 @@ public class CalendarHighlight
                     System.out.print("  ");
                 } else if (dayColumnNo > 1) {
                     System.out.print("   ");
-                }
+                }//
 
                 //We need the program to print either a date or a space
                 if (nextDayColumnToUse != dayColumnNo 
