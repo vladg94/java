@@ -25,7 +25,7 @@ public class CommonFactorsTable
             System.out.print(" |");
             
             for (int column = 2; column <= tableSize; column++) {
-                CommonFactorsTable.printGCD(row, column);
+                CommonFactorsTable.printGCD(CommonFactorsTable.calculusGCD(row, column));
             }
             
             System.out.println(" |");
@@ -38,12 +38,10 @@ public class CommonFactorsTable
     //Method for printing lines whenever you need them
     private static void printLine()
     {
-        for (int column = 0; column < tableSize; column++) {
-            if (column == 0) {
-                System.out.print("|-----|");
-            } else {
-                System.out.print("----");
-            }
+        System.out.print("|-----|");
+        
+        for (int column = 1; column < tableSize; column++) {
+            System.out.print("----");
         }
         System.out.println("-|");   
     }
@@ -68,23 +66,28 @@ public class CommonFactorsTable
     }
 
     //Method to print rows, and also calculate the GCD 
-    private static void printGCD(int rowNum, int columnNum)
+    private static int calculusGCD(int a, int b)
     {           
         //Calculating GCD
-        while(columnNum != rowNum) {
-            if(columnNum < rowNum) {
-                rowNum -= columnNum;
+        while (a != b) {
+            if(a < b) {
+                b -= a;
             } else {
-                columnNum -= rowNum;
+                a -= b;
             }
-        }        
-        
-        //Printing in row
-        if (rowNum != 1) {
+        }  
+
+        return a;
+    }          
+    
+    //Printing in row
+    private static void printGCD(int a)    
+    {
+        if (a != 1) {
             System.out.print("---#");
         } else {
             System.out.print("---|");
-        }
+        }                
     }
 }
             

@@ -1,6 +1,6 @@
 /**
 * Prints a calendar with a highlighted day
-* Tested for 
+* Tested for 3 28 12, 4 7.4 5
 * @author Vlad Georgescu 
 */
 public class CalendarHighlight
@@ -33,45 +33,52 @@ public class CalendarHighlight
 
         while (nextDateToPrint <= monthLastDate || noOfRows < 6) {
             
-            //Printing the left side of the row
-            System.out.print("| ");
-
+            
             //For loop, for printing the row
             for (int dayColumnNo = 1; dayColumnNo <= 7; dayColumnNo++) {
-                
+            
+                //Printing the left side of the row
+                if (dayColumnNo == 1) {
+                    System.out.print("| ");
+                } 
+    
                 //Spaces between dates
-                if (dayColumnNo > 1 && nextDateToPrint == today 
-                    || nextDateToPrint == today + 1 ) 
+                if (dayColumnNo > 1 && nextDateToPrint == today + 1 ) 
                 {
                     System.out.print("  ");
                 } else if (dayColumnNo > 1) {
                     System.out.print("   ");
                 }//
-
+                
                 //We need the program to print either a date or a space
                 if (nextDayColumnToUse != dayColumnNo 
                     || nextDateToPrint > monthLastDate)
                 {
-                    CalendarHighlight.printDateSpace();
+                    System.out.print("  ");
                 } else if (nextDateToPrint == today) {
-                    //Printing the day of today
-                    System.out.print(">"); 
-                    CalendarHighlight.printDate(today);
-                    System.out.print("<");
-                    nextDayColumnToUse++;
+                    System.out.printf("\b>%02d<", today);
                     nextDateToPrint++;
+                    nextDayColumnToUse++;
                 } else {
-                    CalendarHighlight.printDate(nextDateToPrint);
+                    System.out.printf("%02d", nextDateToPrint);
                     nextDayColumnToUse++; 
                     nextDateToPrint++; 
                 } 
+                
+                // Ending the table
+                if (dayColumnNo == 7 && nextDateToPrint - 1  == today) {
+                    System.out.print("|");
+                } else if (dayColumnNo == 7 && nextDateToPrint - 1 != today) {
+                    System.out.print(" |");
+                }
             }//for
+
+            //Preparing the next line
+            System.out.println();
 
             //Incrementation for the number of rows 
             noOfRows++;
 
-            //Ending the row of the table
-            System.out.println(" |");
 
             //Preparing for the next row
             nextDayColumnToUse = 1;
@@ -158,17 +165,5 @@ public class CalendarHighlight
             }
             break;
         }
-    }
-
-    //Method for printing spaces between dates
-    private static void printDateSpace() 
-    {
-        System.out.print("  ");
-    }
-
-    //Method for printing dates
-    private static void printDate(int date)
-    {
-        System.out.printf("%02d", date);
     }
 }
