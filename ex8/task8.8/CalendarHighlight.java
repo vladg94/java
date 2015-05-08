@@ -94,16 +94,10 @@ public class CalendarHighlight
          for (int dayColumn = 1; dayColumn <= 7; dayColumn++) {
             if (dayColumn > 1) {
             System.out.print("-");
-            CalendarHighlight.printHyphens();
+            System.out.print("-----");
             }
         }//for
         System.out.println();
-    }
-
-    //Method to print hypens 
-    private static void printHyphens()
-    {
-        System.out.print("-----");
     }
 
     //Method to print the heading

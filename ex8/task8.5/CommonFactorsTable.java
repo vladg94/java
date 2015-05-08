@@ -83,10 +83,10 @@ public class CommonFactorsTable
     //Printing in row
     private static void printGCD(int a)    
     {
-        if (a != 1) {
-            System.out.print("---#");
-        } else {
+        if (a == 1) {
             System.out.print("---|");
+        } else {
+            System.out.print("---#");
         }                
     }
 }
