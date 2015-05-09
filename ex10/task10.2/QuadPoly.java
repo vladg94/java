@@ -8,10 +8,10 @@ public class QuadPoly
     public double secondCoef;
     public double thirdCoef;
 
-    QuadPoly (double requieredSt, double requieredNd,double requieredTh) 
+    public QuadPoly(double firstCoef, double secondCoef,double thirdCoef) 
     {
-        firstCoef = requieredSt;
-        secondCoef = requieredNd;
-        thirdCoef = requieredTh;
+        this.firstCoef = firstCoef;
+        this.secondCoef = secondCoef;
+        this.thirdCoef = thirdCoef;
     }
 }
