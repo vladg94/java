@@ -9,10 +9,10 @@ public class AddQuadPoly
     {
         //Creating objects
         //Storing them into clases variables
-        QuadPoly firstPoly = new QuadPoly(Double.parseDouble(args[0]) 
-            , Double.parseDouble(args[1]), Double.parseDouble(args[2]));
-        QuadPoly secondPoly = new QuadPoly(Double.parseDouble(args[3]) 
-            , Double.parseDouble(args[4]), Double.parseDouble(args[5]));
+        QuadPoly firstPoly = new QuadPoly(Double.parseDouble(args[0]), 
+            Double.parseDouble(args[1]), Double.parseDouble(args[2]));
+        QuadPoly secondPoly = new QuadPoly(Double.parseDouble(args[3]), 
+            Double.parseDouble(args[4]), Double.parseDouble(args[5]));
 
         //Storing the sum of every coeficient into another class variable
         QuadPoly sumOfPolys = new QuadPoly(Double.parseDouble(args[0]) 
