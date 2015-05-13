@@ -28,4 +28,9 @@ public class QuadPoly
                 && (secondCoef < other.secondCoef 
                     || secondCoef == other.secondCoef && thirdCoef < other.thirdCoef);
     }
-}
+
+    public String toString()
+    {
+        return firstCoef + "x^2 + " + secondCoef + "x + " + thirdCoef;
+    }
+}   
