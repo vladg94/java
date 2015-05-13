@@ -19,9 +19,9 @@ public class QuadPoly
     //Addition method, returning a new QuadPoly object
     public QuadPoly addPoly(QuadPoly other)
     {
-        QuadPoly sumFirstCoef = firstCoef + other.firstCoef;
-        QuadPoly sumSecondCoef = secondCoef + other.secondCoef;
-        QuadPoly sumThirdCoef = thirdCoef + other.thirdCoef;
+        double sumFirstCoef = firstCoef + other.firstCoef;
+        double sumSecondCoef = secondCoef + other.secondCoef;
+        double sumThirdCoef = thirdCoef + other.thirdCoef;
 
         return new QuadPoly(sumFirstCoef, sumSecondCoef, sumThirdCoef);
     }

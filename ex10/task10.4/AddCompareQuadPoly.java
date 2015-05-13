@@ -34,6 +34,7 @@ public class AddCompareQuadPoly
         
         System.out.println();
 
+        //The comparation
         System.out.println("Now the comparation");
 
         //Printing quadratic polynomials for comparation
