@@ -14,9 +14,7 @@ public class CompareQuadPoly
 
         if (firstPoly.equals(secondPoly)) {
             System.out.println("The two polynomials are the same");
-        }
-
-        if (firstPoly.lessThan(secondPoly)) {
+        } else if (firstPoly.lessThan(secondPoly)) {
             System.out.println("The first polynomial is less than the second");
         } else {
             System.out.println("AM PULA MARE");
