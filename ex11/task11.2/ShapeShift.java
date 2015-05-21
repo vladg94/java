@@ -23,10 +23,6 @@ import java.util.Scanner;
     (one, three, or four) and, for a circle, its radius
    * The area and perimiter of the shape
    * The details of the shifted shape.
-
-   * Tested for (2, 0), 2, (2.1, 3); 
-   * (2, 1) (2, 2) (2.3, 3), (2.5, 7.2);
-   * (2, 11) (2, 22), (3, 14.2);
    * @author Vlad Georgescu
 */
 public class ShapeShift
@@ -63,8 +59,7 @@ public class ShapeShift
         int shapeChoice = inputScanner.nextInt();
 
         //Process the shape based on the choice.
-        switch(shapeChoice)
-        {
+        switch (shapeChoice) {
             //Circle
             case 1: {
                 Point centre = inputPoint("Enter the centre as X Y: ");
@@ -125,7 +120,6 @@ public class ShapeShift
                 System.out.println("and when shifted by X offset " + xShift 
                     + " and Y offset " + yShift + ", gives");
                 System.out.println(shiftedRectangle);
-                break;
             }
 
             //Bad choice

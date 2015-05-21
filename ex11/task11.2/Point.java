@@ -1,4 +1,10 @@
-public class Point {
+/**
+* Class Point
+* Creating point objects
+* @author Vlad Georgescu 
+*/
+public class Point 
+{
     private double x;
     private double y;
     
@@ -10,11 +16,11 @@ public class Point {
 
     public double getX()
     {
-        return x;
+        return this.x;
     }
 
     public double getY()
     {
-        return y;
+        return this.y;
     }
 }
