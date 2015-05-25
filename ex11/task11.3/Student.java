@@ -4,30 +4,30 @@
 */
 public class Student
 {   
-    //Variables
-    private final String name;
-    private Phone phoneModel = null; 
-
-    //Constructor 
-    public Student(String name)
+    private final String studentName;
+    private Phone mobilePhone = null;
+    
+    public Student(String studentName)
     {
-        this.name = name;
+        this.studentName = studentName;
     }
 
-    //Purchase mobile phone method
-    public Phone purchasePhone(String name, Account accountName)
+    public Phone purchasePhone(String phoneModel, String accountName)
     {
-        return this.phoneModel = new Phone(name, accountName);
+        Account phoneAccount = new Account(accountName);
+        Phone newPhone = new Phone(phoneModel, phoneAccount);
+        return newPhone;
     }
 
-    public String getStudentName()
+    //Top up method
+    public int topUp(int pounds, Phone mobilePhone)
     {
-        return name;
-    }
-
-    public String toString()
-    {
-        return "Student(" + this.getStudentName() + ", " + this.getPhone() + ")";
-    }
-        
-}
+        if (mobilePhone == null) {
+            System.out.println("NO PHONE!!");
+            return 0;
+        } else {
+            Account phoneAccount = this.mobilePhone.getAccount();
+            return this.phoneAccount.increaseBalance(pounds);
+        }
+    }   
+}   

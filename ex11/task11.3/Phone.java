@@ -6,34 +6,17 @@
 public class Phone
 {
     private final String phoneModel;
-    private final Account accountName;
-    private int noOfSeconds = 0;
+    private final Account phoneAccount;
 
-    public Phone(String phoneModel, Account accountName)
+
+    public Phone(String phoneModel, Account phoneAccount)
     {
         this.phoneModel = phoneModel;
-        this.accountName = accountName;
+        this.phoneAccount = phoneAccount;
     }
-
-    public Phone(int noOfSeconds)
+    
+    public Account getAccount()
     {
-        this.noOfSeconds = noOfSeconds;
-    }
-
-    public String getPhone()
-    {
-        return this.phoneModel;
-    }
-
-    public int getSeconds()
-    {
-        return this.noOfSeconds;
-    }
-
-    public String toString()
-    {
-        return "Student(" + this.getStudentName() + ", Phone(" + this.getPhone()
-            + ", " + this.getSeconds() + ", Account(" + this.getAccountName()
-            + ", " + this.getBalance() + ")";
+        return this.phoneAccount;
     }
 }
