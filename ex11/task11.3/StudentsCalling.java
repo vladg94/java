@@ -1,61 +1,61 @@
 /**
-*
+* PLM NU AM TIMP DE DASTEA
 *
 * @author Vlad Georgescu
 */
 public class StudentsCalling
 {   
-    private static void newStudent(Student name)
+    private static void studentPurchase(Student student, String phoneModel, String accountName)
     {
-        System.out.print("The new student is ");
-        System.out.println(name);
+        System.out.println(student);
+        System.out.println("Is buying phone " + phoneModel + " with account " + accountName);
+        System.out.println("Result: ");
+        student.purchasePhone(phoneModel, accountName);
+        System.out.println(student);
     }
 
-    private static void newPhone(Phone mobilePhone)
+    private static void studentTopUp(Student student, int pounds)    
     {
-        System.out.println("Student named " + Student.getStudentName() + " buys phone " 
-            + Phone.getPhone() + " with account " + Account.getAccountName());
-        System.out.println(mobilePhone);
+        System.out.println(student);
+        System.out.println("Is topping up their phone with " + pounds + " pounds.");
+        System.out.println("Result: ");
+        student.topUp(pounds);
+        System.out.println(student);
     }
 
-    private static void toppingUp(Phone mobilePhone, int creditPoints)
+    private static void studentMakeCall(Student student, int desiredSeconds)
     {
-        if (mobilePhone == null) {
-            System.out.println("No phone, zos");
-            System.out.print(mobilePhone);
-        }
-        return;
-        System.out.println("Student named " + Student.getStudentName() + " topped his credit with " 
-            + creditPoints);
-        Account.increaseBalance(creditPoints);
-        System.out.println(mobilePhone);
+        System.out.println(student);
+        System.out.println("Is making a call for a desired period of " 
+            + desiredSeconds + " seconds.");
+        System.out.println("Result: ");
+        student.makeCall(desiredSeconds);
+        System.out.println(student);
     }
 
-    private static void callingBitches(Phone mobilePhone, int noOfSeconds)
+    public static void main(String[] args)
     {
-        if (mobilePhone == null) {
-            System.out.println("No phone, zos");
-            System.out.println(mobilePhone);
-        }
-        return;
+        //Creating the first student
+        Student firstStudent = new Student("Miron Cozma");
+        System.out.println("One student of our story is: ");
+        System.out.println("Result: ");
+        System.out.println(firstStudent);
+
+        //Creating the second student
+        Student secondStudent = new Student("Gogo Piola");
+        System.out.println("The other student of our story is: ");
+        System.out.println("Result: ");
+        System.out.println(secondStudent);
         
-        Account.makeCall(noOfSeconds);
-        System.out.prinln(mobilePhone);
-    }
+        //First student buys phone
+        StudentsCalling.studentPurchase(firstStudent, "Nokia", "Molozar");
 
-    private static void main(String[] args)
-    {
-        //Creating Student
-        Student firstStudent = new Student ("Mirel Radoi");
-        StudentsCalling.newStudent(firstStudent);
+        //Seconds student buys phone
+        StudentsCalling.studentPurchase(secondStudent, "MotoX", "Smechelar");
 
-        Student secondStudent = new Student ("Pula Bleaga");
-        StudentsCalling.newStudent(secondStudent);
-
-        Account account1 = new Account("OIER");
-        Phone phone1 = firstStudent.purchasePhone("CAZAN1800", account1);
-        StudentsCalling.newPhone(phone1);
-
-
+        StudentsCalling.studentTopUp(firstStudent, 200);
+        
+        //Student attempt to make call
+        StudentsCalling.studentMakeCall(firstStudent, 20000);
     }
 }

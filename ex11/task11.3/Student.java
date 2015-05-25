@@ -12,22 +12,36 @@ public class Student
         this.studentName = studentName;
     }
 
-    public Phone purchasePhone(String phoneModel, String accountName)
+    //Method to purchasePhone
+    public void purchasePhone(String phoneModel, String accountName)
     {
-        Account phoneAccount = new Account(accountName);
-        Phone newPhone = new Phone(phoneModel, phoneAccount);
-        return newPhone;
+        this.mobilePhone = new Phone(phoneModel, new Account(accountName));
     }
 
     //Top up method
-    public int topUp(int pounds, Phone mobilePhone)
+    public void topUp(int pounds)
     {
-        if (mobilePhone == null) {
+        if (this.mobilePhone == null) {
             System.out.println("NO PHONE!!");
-            return 0;
         } else {
             Account phoneAccount = this.mobilePhone.getAccount();
-            return this.phoneAccount.increaseBalance(pounds);
+            phoneAccount.increaseBalance(pounds);
         }
     }   
+
+    public void makeCall(int desiredSeconds) 
+    {
+        if (this.mobilePhone == null) {
+            System.out.println("No PHONE!!");
+        } else {
+            Account phoneAccount = this.mobilePhone.getAccount();
+            int secondsToTrack = phoneAccount.accountCallFunction(desiredSeconds);
+            this.mobilePhone.keepTrackOfSeconds(secondsToTrack);
+        }
+    }
+
+    public String toString()
+    {
+        return "Student(" + this.studentName + ", " + this.mobilePhone + ")";
+    }
 }   

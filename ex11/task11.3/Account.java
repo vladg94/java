@@ -12,10 +12,26 @@ public class Account
         this.accountName = accountName;
    }
 
-   public int increaseBalance(int pounds) 
+   public void increaseBalance(int pounds) 
    {
         this.currentBalance += 100 * pounds;
    }
 
+   public int accountCallFunction(int seconds)
+   {
+        if (seconds >= this.currentBalance) {
+            seconds = this.currentBalance;
+            this.currentBalance = 0;
+            System.out.println("The result should be truncated to " + seconds);
+            return seconds;
+        } else {
+            this.currentBalance -= seconds;
+            return seconds;
+        }
+   }
 
+   public String toString()
+   {
+        return "Account(" + this.accountName + ", " + this.currentBalance + ")";
+   }
 }
