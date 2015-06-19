@@ -13,6 +13,7 @@ public class RomanNumber
     {
         return this.romanNumber.charAt(index);
     }
+    
     /**
     * Builds a RomanNumber with a given integer
     *
@@ -40,85 +41,116 @@ public class RomanNumber
     */
     public String convertToRoman()
     {   
-        //Starting with an empty string.
         String romanNumber = "";
 
-        //Conversion algorithm.
-        while (this.arabicNumber >= 1000) {
-            this.arabicNumber = this.arabicNumber - 1000;
-            romanNumber += "M";
+        int multiplier = this.arabicNumber / 1000;
+    
+        this.arabicNumber -= 1000 * multiplier; 
+        
+        //Counting the thousands, convert them into romans
+        for (int index = 0; index < multiplier; index++) {
+            romanNumber += "M"; 
         }
 
-        while (this.arabicNumber >= 900) {
-            this.arabicNumber = this.arabicNumber - 900;
-            romanNumber += "CM";
+        //Counting the hundreds, and convert them into romans
+        multiplier = this.arabicNumber / 100;
+        switch (multiplier) {
+    
+            case 4 : {
+                romanNumber += "CD";
+                this.arabicNumber -= 100 * multiplier; 
+            } 
+            break;
+    
+            case 5 : {
+                romanNumber += "D";
+                this.arabicNumber -= 100 * multiplier; 
+            }
+            break;
+    
+            case 9 : {
+                romanNumber += "CM";
+                this.arabicNumber -= 100 * multiplier; 
+            }
+            break;
+    
+            default : {
+                for (int index = 0; index < multiplier; index++) {
+                    romanNumber += "C";
+                    this.arabicNumber -= 100 * multiplier; 
+                }
+            }
         }
-
-        while (this.arabicNumber >= 500) {
-            this.arabicNumber = this.arabicNumber - 500;
-            romanNumber += "D";
+        
+        //Counting the tens and add them to the roman number    
+        multiplier = this.arabicNumber / 10;
+        switch (multiplier) {
+    
+            case 4 : {
+                romanNumber += "XL";
+                this.arabicNumber -= 10 * multiplier; 
+            }
+            break;
+    
+            case 5 : {
+                romanNumber += "L";
+                this.arabicNumber -= 10 * multiplier; 
+            }
+            break;
+    
+            case 9 : {
+                romanNumber += "XC";
+                this.arabicNumber -= 10 * multiplier; 
+            }
+            break;
+    
+            default : {
+                for (int index = 0; index < multiplier; index++) {
+                    romanNumber += "X";
+                    this.arabicNumber -= 10 * multiplier; 
+                }
+            }
         }
-
-        while (this.arabicNumber >= 400) {
-            this.arabicNumber = this.arabicNumber - 400;
-            romanNumber += "CD";
+        
+        //Converting the units into romans.
+        switch(this.arabicNumber) {
+            
+            case 4 : {
+                romanNumber += "IV";
+                this.arabicNumber -= multiplier; 
+            }
+            break;
+        
+            case 5 : {
+                romanNumber += "V";
+                this.arabicNumber -= multiplier; 
+            }
+            break;
+    
+            case 9 : {
+                romanNumber += "IX";
+                this.arabicNumber -= multiplier; 
+            }
+            break;
+            
+            default : {
+                for (int index = 0; index < multiplier; index++) {
+                    romanNumber += "I";
+                    this.arabicNumber -= multiplier; 
+                }
+            }
         }
-
-        while (this.arabicNumber >= 100) {
-            this.arabicNumber = this.arabicNumber - 100;
-            romanNumber += "C";
-        }
-
-        while (this.arabicNumber >= 90) {
-            this.arabicNumber = this.arabicNumber - 90;
-            romanNumber += "XC";
-        }
-
-        while (this.arabicNumber >= 50) {
-            this.arabicNumber = this.arabicNumber - 50;
-            romanNumber += "L";
-        }
-
-        while (this.arabicNumber >= 40) {
-            this.arabicNumber = this.arabicNumber - 40;
-            romanNumber += "XL";
-        }
-
-        while (this.arabicNumber >= 10) {
-            this.arabicNumber = this.arabicNumber - 10;
-            romanNumber += "X";
-        }
-
-        while (this.arabicNumber >= 5) {
-            this.arabicNumber = this.arabicNumber - 5;
-            romanNumber +="V";
-        }
-
-        while (this.arabicNumber >= 4) {
-            this.arabicNumber = this.arabicNumber - 4;
-            romanNumber += "IV";
-        }
-
-        while (this.arabicNumber >= 1) {
-            this.arabicNumber = this.arabicNumber - 1;
-            romanNumber += "I";
-        }
-
         return romanNumber;
-    }
-
+    }     
+    
     /**
     * This method converst numbers from roman style to arabic style.
     *
-    * @return The int format of the arabic number;
+    * @return The int format of the arabic number.
     */
     public int convertToArabic()
     {
         int arabicNumber = 0;
-
-        if (this.romanNumber == null) {
-            return -1;
-        }
         
         //A for loop, to go through all of the roman number digits
         for (int index = 0; index < this.romanNumber.length(); index++) {
