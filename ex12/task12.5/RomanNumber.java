@@ -42,104 +42,64 @@ public class RomanNumber
     public String convertToRoman()
     {   
         String romanNumber = "";
-
-        int multiplier = this.arabicNumber / 1000;
-    
-        this.arabicNumber -= 1000 * multiplier; 
+        int numberToTransform = this.arabicNumber;
         
-        //Counting the thousands, convert them into romans
-        for (int index = 0; index < multiplier; index++) {
-            romanNumber += "M"; 
+        while (numberToTransform >= 1000) {
+            romanNumber += "M";
+            numberToTransform -= 1000;
+        }
+        
+        if (numberToTransform >= 900) {
+            romanNumber += "CM";
+            numberToTransform -= 900;
+        } else if (numberToTransform >= 500) {
+            romanNumber += "D";
+            numberToTransform -= 500;
+        }
+        if (numberToTransform >= 400) {
+            romanNumber += "CD";
+            numberToTransform -= 400;
+        }
+        
+        while (numberToTransform >= 100) {
+            romanNumber += "C";
+            numberToTransform -= 100;
         }
 
-        //Counting the hundreds, and convert them into romans
-        multiplier = this.arabicNumber / 100;
-        switch (multiplier) {
-    
-            case 4 : {
-                romanNumber += "CD";
-                this.arabicNumber -= 100 * multiplier; 
-            } 
-            break;
-    
-            case 5 : {
-                romanNumber += "D";
-                this.arabicNumber -= 100 * multiplier; 
-            }
-            break;
-    
-            case 9 : {
-                romanNumber += "CM";
-                this.arabicNumber -= 100 * multiplier; 
-            }
-            break;
-    
-            default : {
-                for (int index = 0; index < multiplier; index++) {
-                    romanNumber += "C";
-                    this.arabicNumber -= 100 * multiplier; 
-                }
-            }
+        if (numberToTransform >= 90) {
+            romanNumber += "XC";
+            numberToTransform -= 90;
+        } else if (numberToTransform >= 50) {
+            romanNumber += "L";
+            numberToTransform -= 50;
+        }
+        if (numberToTransform >= 40) {
+            romanNumber += "XL";
+            numberToTransform -= 40;
+        }
+
+        while (numberToTransform >= 10) {
+            romanNumber += "X";
+            numberToTransform -= 10;
         }
         
-        //Counting the tens and add them to the roman number    
-        multiplier = this.arabicNumber / 10;
-        switch (multiplier) {
-    
-            case 4 : {
-                romanNumber += "XL";
-                this.arabicNumber -= 10 * multiplier; 
-            }
-            break;
-    
-            case 5 : {
-                romanNumber += "L";
-                this.arabicNumber -= 10 * multiplier; 
-            }
-            break;
-    
-            case 9 : {
-                romanNumber += "XC";
-                this.arabicNumber -= 10 * multiplier; 
-            }
-            break;
-    
-            default : {
-                for (int index = 0; index < multiplier; index++) {
-                    romanNumber += "X";
-                    this.arabicNumber -= 10 * multiplier; 
-                }
-            }
+        if (numberToTransform >= 9) {
+            romanNumber += "IX";
+            numberToTransform -= 9;
+        } else if (numberToTransform >= 5) {
+            romanNumber += "V";
+            numberToTransform -= 5;
         }
-        
-        //Converting the units into romans.
-        switch(this.arabicNumber) {
-            
-            case 4 : {
-                romanNumber += "IV";
-                this.arabicNumber -= multiplier; 
-            }
-            break;
-        
-            case 5 : {
-                romanNumber += "V";
-                this.arabicNumber -= multiplier; 
-            }
-            break;
-    
-            case 9 : {
-                romanNumber += "IX";
-                this.arabicNumber -= multiplier; 
-            }
-            break;
-            
-            default : {
-                for (int index = 0; index < multiplier; index++) {
-                    romanNumber += "I";
-                    this.arabicNumber -= multiplier; 
-                }
-            }
+        if (numberToTransform >= 4) {
+            romanNumber += "IV";
+            numberToTransform -= 4;
         }
+
+        while (numberToTransform >= 1) {
+            romanNumber += "I";
+            numberToTransform -= 1;
+        }
+
         return romanNumber;
     }     
     
@@ -154,62 +114,88 @@ public class RomanNumber
         
         //A for loop, to go through all of the roman number digits
         for (int index = 0; index < this.romanNumber.length(); index++) {
-            
-            if (getChar(index) == 'M') {
+
+            if (this.getChar(index) == 'M') {
                 arabicNumber += 1000;
             }
 
-            if (getChar(index) == 'D') {
+            else if (this.getChar(index) == 'D') {
                 arabicNumber += 500;
             }
 
             //The next segment of code verifies if the letter at this index is C
-            //Then we verify if the letter at the next index si M or D.
+            //Then we verify if the letter at the next index is M or D.
             //If its M or D we have a digit couple to deal with.
-            if (getChar(index) == 'C') {
-                if (getChar(index + 1) == 'M') {
-                    arabicNumber += 900;
-                } else if (getChar(index + 1) == 'D') {
-                    arabicNumber += 400;
-                } else {
-                    arabicNumber += 100;
+            else if (this.getChar(index) == 'C') {
+                
+                arabicNumber += 100;
+            
+                if (index < (this.romanNumber.length() - 1)) 
+                {
+                    if (this.getChar(index + 1) == 'M') {
+                        arabicNumber += 800;
+                        index++;
+                    } else if (this.getChar(index + 1) == 'D') {
+                        arabicNumber += 300;
+                        index++;
+                    }    
                 }
-            }
-
-            if (getChar(index) == 'L') {
+            }        
+            
+            else if (this.getChar(index) == 'L') {
                 arabicNumber += 50;
             }
 
             //Same segment of code as for the C letter. Use to verify if we encounter any
             //Couple of digits
-            if (getChar(index) == 'X') {
-                if (getChar(index + 1) == 'C') {
-                    arabicNumber += 90;
-                } else if (getChar(index + 1) == 'L') {
-                    arabicNumber += 40;
-                } else {
-                    arabicNumber += 10;
+            else if (this.getChar(index) == 'X') {
+                
+                arabicNumber += 10;
+            
+                if (index < (this.romanNumber.length() - 1)) {
+                    if (this.getChar(index + 1) == 'C') {
+                        arabicNumber += 80;
+                        index++;
+                    } else if (this.getChar(index + 1) == 'L') {
+                        arabicNumber += 30;
+                        index++;
+                    }
                 }
             }
 
-            if (getChar(index) == 'V') {
+            else if (this.getChar(index) == 'V') {
                 arabicNumber += 5;
             }
 
 
             //Same segment of code as for the C letter. Use to verify if we encounter any
             //Couple of digits
-            if (getChar(index) == 'I') {
-                if (getChar(index + 1) == 'X'){
-                    arabicNumber += 9;
-                } else if (getChar(index + 1) == 'V') {
-                    arabicNumber += 4;
-                } else {
-                    arabicNumber += 1;
+            else if (this.getChar(index) == 'I') {
+                
+                arabicNumber += 1;
+                
+                if (index < (this.romanNumber.length() - 1)) {
+                    if (this.getChar(index + 1) == 'X') {
+                        arabicNumber += 8;
+                        index++;
+                    } else if (this.getChar(index + 1) == 'V') {
+                        arabicNumber += 3;
+                        index++;                        
+                    }
                 }
             }
         }
-            
         return arabicNumber;
     }
+
+    /*
+    //Used for testing of the RomanNumber. 
+    public static void main(String[] args)
+    {
+        RomanNumber tester1 = new RomanNumber(123);
+        RomanNumber tester2 = new RomanNumber("XL");
+        System.out.println(tester1.convertToRoman());
+        System.out.println(tester2.convertToArabic());
+    }
+    */
 }
