@@ -50,7 +50,7 @@ public class Sorting
             new Student("Mihai", "Raluca", 21, "Baros"),
             new Student("Patraru", "Dragos", 18, "Moise"),
             //See what i did here?
-            new Student("Ponta", "Mickey", 38, "Dragnea"),
+            new Student("Pont", "Mickey", 38, "Dragnea"),
             new Student("Dan", "Sova", 15, "Mihai"),
             new Student("Gica", "Contra", 23, "Ghitescu"),
             new Student("Ghitescu","Radu", 20, "Ponta"),
