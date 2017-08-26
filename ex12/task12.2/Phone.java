@@ -1,7 +1,7 @@
 /**
 * Phone Class
 * Tested for 20, 21.2
-* @author Vlad Georgescu.
+* @author Vlad Georgescu..
 */
 public class Phone
 {

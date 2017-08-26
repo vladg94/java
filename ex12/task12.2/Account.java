@@ -1,5 +1,5 @@
 /**
-* Account Class.
+* Account Class..
 * Tested for 20 80; 20 20.1
 * @author Vlad Georgescu
 */

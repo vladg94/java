@@ -3,7 +3,7 @@
 * 
 * Tested for "John Testatul", "Model de test", "Cont", 20, 30 
 * and 1, "Model de test", "Cont", sloboz, 12.
-* @author Vlad Georgescu
+* @author Vlad Georgescu.
 */
 public class StudentsCalling
 {   

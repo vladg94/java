@@ -1,5 +1,5 @@
 /**
-* Student class.
+* Student class..
 * Tested for "Ion Boloz", "Costel", "Gigel", 10, 20; "Ion Boloz", "Costel", "Gigel", 11, 12;
 * 
 * @author Vlad Georgescu
