@@ -1,8 +1,8 @@
 /**
 * Prints out the story of two students with phones.
 * 
-* Tested for "John Testatul", "Model de test", "Cont de pula", 20, 30 
-* and 1, "Model de test", "Cont de pula", sloboz, 12.
+* Tested for "John Testatul", "Model de test", "Cont", 20, 30 
+* and 1, "Model de test", "Cont", sloboz, 12.
 * @author Vlad Georgescu
 */
 public class StudentsCalling
@@ -57,10 +57,10 @@ public class StudentsCalling
         System.out.println(secondStudent);
         
         //First student buys phone
-        StudentsCalling.studentPurchase(firstStudent, "Nokia", "Molozar");
+        StudentsCalling.studentPurchase(firstStudent, "Nokia", "Martipan");
 
         //Second student buys phone
-        StudentsCalling.studentPurchase(secondStudent, "MotoX", "Smechelar");
+        StudentsCalling.studentPurchase(secondStudent, "MotoX", "Smecher");
 
         StudentsCalling.studentTopUp(firstStudent, 200);
         
@@ -89,7 +89,7 @@ public class StudentsCalling
         Student testStudent = new Student("John Testatul");
 
         //Student purcahse phone
-        StudentsCalling.studentPurchase(testStudent, "ModelDeTest", "ContDePula");
+        StudentsCalling.studentPurchase(testStudent, "ModelDeTest", "Cont");
 
         //Student top up phone
         StudentsCalling.studentTopUp(testStudent, 20);
