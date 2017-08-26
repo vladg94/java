@@ -1,5 +1,5 @@
 /**
-* Circle class
+* Circle class.
 * Tested for (1 2) 3 and Offsets 4 5.1; (1 a) 17 1000 1000
 * @author Vlad Georgescu 
 */
