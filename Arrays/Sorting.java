@@ -6,7 +6,7 @@
 public class Sorting
 {
     //Helper Method, printing an array.
-    private void printArray(Student[] anArray)
+    private static void printArray(Student[] anArray)
     {
         for (int index = 0; index < anArray.length; index++) {
             System.out.println(anArray[index]);
@@ -14,11 +14,11 @@ public class Sorting
     }
 
     //Helper method, sorting array by lenght
-    private void sortByAge(Student[] anArray)
+    private static void sortByAge(Student[] anArray)
     {
         //Printing the array before sorting.
         System.out.println("We will sort this array by age: ");
-        this.printArray(anArray);
+        Sorting.printArray(anArray);
 
         //Algorithm to sort the array
         int unsortedLength = anArray.length;
@@ -36,7 +36,7 @@ public class Sorting
             }
         } while (changedOnThisPass);
 
-        this.printArray(anArray);
+        Sorting.printArray(anArray);
 
     }
 
