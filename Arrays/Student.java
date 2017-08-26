@@ -1,7 +1,7 @@
 /**
 * Student class
 *
-* @author Vlad Georgescu
+* @author Vlad Georgescu.
 */
 public class Student
 {

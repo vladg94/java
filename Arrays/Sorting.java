@@ -1,5 +1,5 @@
 /**
-* Sort the elements of an array
+* Sort the elements of an array.
 *
 *
 */
