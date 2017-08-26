@@ -30,7 +30,7 @@ public class Account
 
    //Method to keep track of the balance of the account
    //When students choose to make a call 
-   public void calculateBalance(int seconds)
+   public int calculateBalance(int seconds)
    {
         if (seconds >= this.currentBalance) {
             seconds = this.currentBalance;
@@ -39,6 +39,7 @@ public class Account
         } 
         
         this.currentBalance -= seconds;
+        return 0; 
    }
 
    public String toString()

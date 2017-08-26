@@ -1,7 +1,7 @@
 /**
 * Prints out the story of two students with phones.
 * 
-* Tested for 
+* Tested for .
 * @author Vlad Georgescu
 */
 public class StudentsCalling
@@ -54,10 +54,10 @@ public class StudentsCalling
         System.out.println(secondStudent);
         
         //First student buys phone
-        StudentsCalling.studentPurchase(firstStudent, "Nokia", "Molozar");
+        StudentsCalling.studentPurchase(firstStudent, "Nokia", "Nume");
 
         //Second student buys phone
-        StudentsCalling.studentPurchase(secondStudent, "MotoX", "Smechelar");
+        StudentsCalling.studentPurchase(secondStudent, "MotoX", "Nume1");
 
         StudentsCalling.studentTopUp(firstStudent, 200);
         
@@ -85,7 +85,7 @@ public class StudentsCalling
         Student testStudent = new Student("John Testatul");
 
         //Student purcahse phone
-        StudentsCalling.studentPurchase(testStudent, "ModelDeTest", "ContDePula");
+        StudentsCalling.studentPurchase(testStudent, "ModelDeTest", "ContDeVeghe");
 
         //Student top up phone
         StudentsCalling.studentTopUp(testStudent, 20);
