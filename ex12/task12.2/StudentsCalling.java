@@ -1,5 +1,5 @@
 /**
-* Prints out the story of two students with phones.
+* Prints out the story of two students with phones..
 * 
 * Tested for "John Testatul", "Model de test", "Cont", 20, 30 
 * and 1, "Model de test", "Cont", sloboz, 12.
