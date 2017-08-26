@@ -1,6 +1,6 @@
 /**
-* Prints some useless shit 
-* Tested for 2015, 1994, 1996, cacat, pisat, mazga
+* Prints something
+* Tested for 2015, 1994, 1996, avion, motor, gogonele
 * @author Vlad Georgescu
 */
 public class WorkFuture2
