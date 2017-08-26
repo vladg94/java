@@ -11,7 +11,7 @@ public class Account
    /**
    * Construct a new Account object.
    *
-   * @param a String accountName, for the name of the account.
+   * @param a String accountName, for the name of the account
    */
    public Account(String accountName)
    {

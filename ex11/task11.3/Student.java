@@ -1,5 +1,5 @@
 /**
-* Student class
+* Student class.
 * @author Vlad Georgescu
 */
 public class Student

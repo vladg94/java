@@ -22,7 +22,7 @@ public class Phone
         return this.phoneAccount;
     }
 
-    //The phone should keep track of the calls made on it. 
+    //The phone should keep track of the calls made on it 
     //Tracking the calls means to store the seconds of every call
     //in a variable.
     public void memorizeSeconds(int seconds) 
